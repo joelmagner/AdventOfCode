@@ -22,7 +22,9 @@ x86/
 bld/
 [Bb]in/
 [Oo]bj/
+[Pp]roperties/
 [Ll]og/
+[Aa]pp.config
 
 # Visual Studio 2015/2017 cache/options directory
 .vs/
