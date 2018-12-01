@@ -1,27 +1,50 @@
 ﻿using System;
-
+using System.Collections.Generic; 
+using System.Linq;
+using System.Text;
 namespace AdventOfCode.DayOne
 {
     class AdventOfCodeDayOne
     {
-        private int result = 0;
+        private int result = 0, duplicate;
+        private List<int> history = new List<int> {};
+
         private bool GetInput()
         {
             AdventOfCodeDayOne dayOne = new AdventOfCodeDayOne();
             try
             {
-                string[] inputs = System.IO.File.ReadAllLines(@"C:\AdventOfCode\AdventOfCode.DayOne\inputDayOne.txt");
-                foreach (string input in inputs)
+                bool calibrated = false;
+                history.Add(result);
+                while(duplicate == 0)
                 {
-                    result = dayOne.ChronalCalibration(Int32.Parse(input));
+                    string[] inputs = System.IO.File.ReadAllLines(@"C:\Users\Joel\source\repos\joelmagner\AdventOfCode\AdventOfCode.DayOne\inputDayOne.txt");
+                    var last = inputs.Last();
+                    foreach (string input in inputs)
+                    {
+                        result = dayOne.ChronalCalibration(Int32.Parse(input));
+                        if(input == last && !calibrated){Console.WriteLine("Task A: {0}", result); calibrated = true;}
+                        duplicate = dayOne.Duplicate(result) == true ? result : 0;
+                    }
                 }
-                return true; 
+                return false;
             }
             catch(Exception e)
             {
                 Console.WriteLine("e:", e);
                 return false;
             }
+        }
+
+        private bool Duplicate(int result)
+        {
+
+            if(history.Contains(result)){
+               Console.WriteLine("Task B: {0}",result);
+               return true;
+            }
+            history.Add(result);
+            return false;
         }
 
         private int ChronalCalibration(int freq)
@@ -32,6 +55,8 @@ namespace AdventOfCode.DayOne
         static int Main(string[] args)
         {
             AdventOfCodeDayOne dayOne = new AdventOfCodeDayOne();
+
+  
             return dayOne.result = dayOne.GetInput() ? dayOne.result : 0;
         }
     }
