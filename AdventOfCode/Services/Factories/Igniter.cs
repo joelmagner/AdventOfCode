@@ -15,11 +15,11 @@ namespace AdventOfCode
             {
                 case 1:
                     DayOne one = new DayOne();
-                    _ignite_ = one.run(task);
+                    _ignite_ = one.Run(task);
                     break;
                 case 2:
                     DayTwo two = new DayTwo();
-                    _ignite_ = two.run(task);
+                    _ignite_ = two.Run(task);
                     break;
                 case 3:
                     break;
