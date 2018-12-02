@@ -44,7 +44,7 @@ namespace AdventOfCode
             return "Didn't find anything :(";
         }
 
-        public Object run(int day)
+        public Object Run(int day)
         {
             return day == 1 ? DayTwoTaskOne() : day == 2 ? DayTwoTaskTwo() : "404";
         }

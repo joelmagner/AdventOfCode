@@ -10,7 +10,8 @@ namespace AdventOfCode
     public interface IFileManager
     {
         List<T> ReadFromFileToList<T>(int day);
-        StreamWriter SaveToFile();
+        string ReadLineFromFile(int day);
+        void SaveToFile(string fileName);
         string Path();
     }
 
@@ -52,14 +53,32 @@ namespace AdventOfCode
 
         public string Path()
         {
-            Translator _translate = new Translator();
-            var path = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
-            return Directory.GetParent(path).FullName + "/AdventOfCode/Resources/Files/";
+            var directory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
+            return Directory.GetParent(directory).FullName + "/AdventOfCode/Resources/Files/";
         }
 
-        public StreamWriter SaveToFile()
+        public void SaveToFile(string fileName, string message, bool writeAllAtOnce)
         {
-            throw new NotImplementedException();
+            StringBuilder sb = new StringBuilder();
+            if (writeAllAtOnce)
+            {
+                sb.Append(message);
+            }
+
+            if (!File.Exists(Path() + fileName + ".txt") && !writeAllAtOnce)
+            {
+                using (StreamWriter file = new StreamWriter(Path() + fileName + ".txt"))
+                {
+                    if (writeAllAtOnce)
+                    {
+                        file.Write(sb.ToString()); //write a bunch
+                    }
+                    else
+                    {
+                        file.WriteLine(message); //write a line to a file
+                    }
+                }
+            }
         }
     }
 
