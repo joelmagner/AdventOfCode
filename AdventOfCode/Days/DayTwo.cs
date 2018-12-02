@@ -15,8 +15,8 @@ namespace AdventOfCode
             int twos=0, threes=0;
             List<string> data = _fileManager.ReadFromFileToList<string>(2);
 
-            twos = occurrences(data, 2);
-            threes = occurrences(data, 3);
+            twos = Occurrences(data, 2);
+            threes = Occurrences(data, 3);
 
             return twos*threes;
         }
