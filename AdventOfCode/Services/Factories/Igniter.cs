@@ -30,7 +30,7 @@ namespace AdventOfCode
                     break;
 
             }
-            Console.WriteLine("||{0}\t || {1}\t || ", day, task);
+            Console.Write("||{0}\t || {1}\t || ", day, task);
             return _ignite_;
         }
 
