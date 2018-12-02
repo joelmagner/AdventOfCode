@@ -4,10 +4,10 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{D9D5233D-295D-4D93-834F-10A906BB8246}</ProjectGuid>
+    <ProjectGuid>{350BC81A-84AA-4873-9605-B27D2AD047E9}</ProjectGuid>
     <OutputType>Exe</OutputType>
-    <RootNamespace>AdventOfCode.DayOne</RootNamespace>
-    <AssemblyName>AdventOfCode.DayOne</AssemblyName>
+    <RootNamespace>AdventOfCode</RootNamespace>
+    <AssemblyName>AdventOfCode</AssemblyName>
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
@@ -43,14 +43,21 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Services\Factories\AppSettings.cs" />
+    <Compile Include="Days\DayOne.cs" />
+    <Compile Include="Days\DayTwo.cs" />
+    <Compile Include="Services\Extensions\FileManager.cs" />
+    <Compile Include="Services\Factories\Igniter.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Services\Factories\Translator.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="inputDayOne.txt" />
+    <Content Include="Resources\Files\DayTwo.txt" />
+    <Content Include="Resources\Files\DayOne.txt" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
