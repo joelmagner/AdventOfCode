@@ -34,8 +34,10 @@ namespace AdventOfCode
                 {
                     result += item;
                     if (history.Contains(result))
+                    {
                         duplicate = true;
-
+                        break;
+                    }
                     history.Add(result);
                 }
             }

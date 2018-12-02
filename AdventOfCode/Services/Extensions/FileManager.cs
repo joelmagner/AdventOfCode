@@ -11,7 +11,7 @@ namespace AdventOfCode
     {
         List<T> ReadFromFileToList<T>(int day);
         string ReadLineFromFile(int day);
-        void SaveToFile(string fileName);
+        void SaveToFile(string fileName, string message, bool writeAllAtOnce);
         string Path();
     }
 
