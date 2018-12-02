@@ -42,9 +42,9 @@ namespace AdventOfCode
             return result;
         }
 
-        public Object Run(int day)
+        public Object Run(int task)
         {
-            return day == 1 ? DayOneTaskOne() : day == 2 ? DayOneTaskTwo() : 404;
+            return task == 1 ? DayOneTaskOne() : task == 2 ? DayOneTaskTwo() : 404;
         }
     }
 }
