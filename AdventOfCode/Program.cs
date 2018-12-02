@@ -16,7 +16,7 @@ namespace AdventOfCode
             Console.WriteLine("=== Advent Of Code {0} ===", DateTime.Now.Year);
             Console.WriteLine("Result: {0}", _ignite_.Ignite(1, 1));
             Console.WriteLine("Result: {0}", _ignite_.Ignite(1, 2));
-            Console.WriteLine("Result: {0}", _ignite_.Ignite(2,1));
+            Console.WriteLine("Result: {0}", _ignite_.Ignite(2, 1));
             Console.WriteLine("Result: {0}", _ignite_.Ignite(2, 2));
             Console.WriteLine("Done");
             Console.ReadLine();
