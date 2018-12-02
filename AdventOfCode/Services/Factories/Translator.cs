@@ -11,9 +11,9 @@ namespace AdventOfCode
         
         public string Day(int day)
         {
-            string prefix = "Day", translatedDay = "";
+            string prefix = "Day";
             string[] suffix = {"","One", "Two", "Three", "Four", "Five", "Six", "Seven" };
-            return (translatedDay = prefix + suffix[day]);
+            return (prefix + suffix[day]);
         }
 
         public Translator(params int[] day)
