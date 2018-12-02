@@ -21,7 +21,7 @@ namespace AdventOfCode
             return twos*threes;
         }
 
-        public int occurrences(List<string> words, int number)
+        public int Occurrences(List<string> words, int number)
         {
             return words.Count(id => id.GroupBy(c => c).Any(g => g.Count() == number));
         }
