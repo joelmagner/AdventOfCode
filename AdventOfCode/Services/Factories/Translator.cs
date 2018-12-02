@@ -8,12 +8,15 @@ namespace AdventOfCode
 {
     public class Translator
     {
-        
+        private readonly string prefix = "Day";
+        string[] suffix = {"","One", "Two", "Three", "Four", "Five", "Six", "Seven" };
         public string Day(int day)
         {
-            string prefix = "Day";
-            string[] suffix = {"","One", "Two", "Three", "Four", "Five", "Six", "Seven" };
             return (prefix + suffix[day]);
+        }
+        public string DayNumeric(int day)
+        {
+            return (prefix +" " + day);
         }
 
         public Translator(params int[] day)
