@@ -12,12 +12,9 @@ namespace AdventOfCode
 
         public Object DayTwoTaskOne()
         {
-            int twos=0, threes=0;
             List<string> data = _fileManager.ReadFromFileToList<string>(2);
-
-            twos = Occurrences(data, 2);
+            int twos = Occurrences(data, 2),
             threes = Occurrences(data, 3);
-
             return twos*threes;
         }
 
