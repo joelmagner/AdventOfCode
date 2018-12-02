@@ -12,14 +12,13 @@ namespace AdventOfCode
 
         public Object DayTwoTaskOne()
         {
-            int twos=0, threes=0, checksum;
+            int twos=0, threes=0;
             List<string> data = _fileManager.ReadFromFileToList<string>(2);
 
             twos = occurrences(data, 2);
             threes = occurrences(data, 3);
-            checksum = twos * threes;
 
-            return checksum;
+            return twos*threes;
         }
 
         public int occurrences(List<string> words, int number)
