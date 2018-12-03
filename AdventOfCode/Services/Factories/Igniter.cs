@@ -7,21 +7,22 @@ namespace AdventOfCode
 {
     class Igniter
     {
-        private Translator _translator = new Translator();
         private Object _ignite_;
         public Object Ignite(int day, int task)
         {
             switch (day)
             {
                 case 1:
-                    DayOne one = new DayOne();
+                    var one = new DayOne();
                     _ignite_ = one.Run(task);
                     break;
                 case 2:
-                    DayTwo two = new DayTwo();
+                    var two = new DayTwo();
                     _ignite_ = two.Run(task);
                     break;
                 case 3:
+                    var three = new DayThree();
+                    _ignite_ = three.Run(task);
                     break;
                 case 4:
                     break;
@@ -30,7 +31,7 @@ namespace AdventOfCode
                     break;
 
             }
-            Console.Write("||{0}\t || {1}\t || ", day, task);
+            Console.Write("||{0,4}\t ||  {1,1}\t || ", day, task);
             return _ignite_;
         }
 

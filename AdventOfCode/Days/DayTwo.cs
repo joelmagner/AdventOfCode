@@ -26,16 +26,14 @@ namespace AdventOfCode
         public Object DayTwoTaskTwo()
         {
             List<string> data = _fileManager.ReadFromFileToList<string>(2);
-            IGrouping<string, string> pair;
             foreach (string entry in data)
             {
-                pair = data.Select(id => id.Remove(data.FindIndex(x => x == entry), 1))
+                var pair = data.Select(id => id.Remove(data.FindIndex(x => x == entry), 1))
                            .GroupBy(id => id)
                            .FirstOrDefault(g => g.Count() > 1);
-
-                if (pair != null)
+                if(pair != null)
                 {
-                    return pair.First();
+                    return pair?.First();
                 }
             }
             return "Didn't find anything :(";

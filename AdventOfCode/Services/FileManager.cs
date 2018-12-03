@@ -19,7 +19,7 @@ namespace AdventOfCode
     {
         public List<T> ReadFromFileToList<T>(int day)
         {
-            Translator _translate = new Translator();
+            var _translate = new Translator();
             List<T> data = new List<T>();
             const Int32 BufferSize = 128;
             using (var fileStream = File.OpenRead(Path() + _translate.Day(day) + ".txt"))
@@ -36,7 +36,7 @@ namespace AdventOfCode
 
         public string ReadLineFromFile(int day)
         {
-            Translator _translate = new Translator();
+            var _translate = new Translator();
             const Int32 BufferSize = 128;
             using (var fileStream = File.OpenRead(Path() + _translate.Day(day) + ".txt"))
             using (var streamReader = new StreamReader(fileStream, Encoding.UTF8, true, BufferSize))
@@ -51,6 +51,13 @@ namespace AdventOfCode
             return ":( wääääh ):";
         }
 
+        public string[] ReadFromFile(int day)
+        {
+            var _translate = new Translator();
+            return File.ReadAllLines(Path() + _translate.Day(day) + ".txt");
+
+        }
+
         public string Path()
         {
             var directory = Directory.GetParent(Directory.GetCurrentDirectory()).Parent.FullName;
@@ -59,7 +66,7 @@ namespace AdventOfCode
 
         public void SaveToFile(string fileName, string message, bool writeAllAtOnce)
         {
-            StringBuilder sb = new StringBuilder();
+            var sb = new StringBuilder();
             if (writeAllAtOnce)
             {
                 sb.Append(message);
