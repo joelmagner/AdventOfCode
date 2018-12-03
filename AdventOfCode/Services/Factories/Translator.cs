@@ -16,7 +16,7 @@ namespace AdventOfCode
         }
         public string DayNumeric(int day)
         {
-            return (prefix +" " + day);
+            return (prefix + " " + day);
         }
 
         public Translator(params int[] day)
